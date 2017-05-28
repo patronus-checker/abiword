@@ -1,5 +1,6 @@
 /* AbiWord
  * Copyright (C) 2005 Martin Sevior <msevior@physics.unimelb.edu.au>
+ * Copyright (C) 2017 Jan Tojnar <jtojnar@mail.muni.cz>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -17,25 +18,24 @@
  * 02110-1301 USA.
  */
 
-#ifndef __LinkGrammarWrap_h__
-#define __LinkGrammarWrap_h__
+#ifndef __PatronusWrap_h__
+#define __PatronusWrap_h__
 
 extern "C" {
-#include <link-grammar/link-includes.h>
+#include <patronus/patronus.h>
 }
 
 class PieceOfText;
 
-class LinkGrammarWrap
-{
-  public:
-  LinkGrammarWrap(void);
-  virtual ~LinkGrammarWrap(void);
-  bool parseSentence(PieceOfText * pT);
-  bool clear(void);
- private:
-  Dictionary      m_Dict;
-  Parse_Options   m_Opts;
+class PatronusWrap {
+public:
+	PatronusWrap(void);
+	virtual ~PatronusWrap(void);
+	bool parseSentence(PieceOfText * pT);
+	bool clear(void);
+private:
+	Patronus* m_Checker;
+	PatronusProperties m_Properties;
 };
 
-#endif // __LinkGrammarWrap_h__
+#endif // __PatronusWrap_h__

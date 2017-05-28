@@ -1,5 +1,5 @@
 
-grammar_pkgs='link-grammar >= 4.2.1'
+grammar_pkgs='patronus >= 0.1.0'
 grammar_deps="no"
 
 dnl make sure we enable grammar only if spell is enabled. At least in auto mode.
@@ -22,10 +22,6 @@ AC_MSG_ERROR([grammar plugin: static linking not supported])
 fi
 
 PKG_CHECK_MODULES(GRAMMAR,[ $grammar_pkgs ])
-PKG_CHECK_EXISTS([ link-grammar >= 5.1.0 ], 
-[
-	AC_DEFINE([HAVE_LINK_GRAMMAR_51],[1],["have link-grammar 5.1.0 or later"])
-])
 
 test "$enable_grammar" = "auto" && PLUGINS="$PLUGINS grammar"
 

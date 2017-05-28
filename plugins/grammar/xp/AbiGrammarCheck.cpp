@@ -44,7 +44,7 @@
 #include <signal.h>
 #include "ut_files.h"
 #endif
-#include "../linkgrammarwrap/LinkGrammarWrap.h"
+#include "../patronuswrap/PatronusWrap.h"
 #include "AbiGrammarUtil.h"
 #include "ut_growbuf.h"
 #include "fl_Squiggles.h"
@@ -70,7 +70,7 @@ bool Abi_GrammarCheck::CheckBlock(fl_BlockLayout * pB)
 {
   if(m_GrammarWrap == NULL)
   {
-    m_GrammarWrap = new LinkGrammarWrap();
+    m_GrammarWrap = new PatronusWrap();
   }
   if(pB == NULL)
   {

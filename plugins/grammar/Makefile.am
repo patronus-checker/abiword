@@ -1,11 +1,11 @@
 
-SUBDIRS = linkgrammarwrap xp
+SUBDIRS = patronuswrap xp
 
 plugindir = $(ABIWORD_PLUGINSDIR)
 plugin_LTLIBRARIES = grammar.la
 
 grammar_la_LIBADD = \
-	linkgrammarwrap/liblinkgrammarwrap.la \
+	patronuswrap/libpatronuswrap.la \
 	xp/libxp.la \
 	$(GRAMMAR_LIBS)
 

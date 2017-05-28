@@ -24,7 +24,7 @@
 #include "ut_vector.h"
 
 class fl_BlockLayout;
-class LinkGrammarWrap;
+class PatronusWrap;
 class PieceOfText;
 
 class Abi_GrammarCheck
@@ -36,7 +36,7 @@ class Abi_GrammarCheck
   bool   GetEnglishText(fl_BlockLayout * pB);
   bool   isSentenceBlank(const char * szSent);
  private:
-  LinkGrammarWrap *  m_GrammarWrap;
+  PatronusWrap *  m_GrammarWrap;
   UT_GenericVector<PieceOfText *> m_vecSentences;
 };
 
